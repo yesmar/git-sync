@@ -1,0 +1,88 @@
+.\" git-update recursively update git repos in directory hierarchies.
+.\" Copyright © 2018 Ramsey Dow
+.\"
+.\" This program is free software: you can redistribute it and/or modify
+.\" it under the terms of the GNU General Public License as published by
+.\" the Free Software Foundation, either version 3 of the License, or
+.\" (at your option) any later version.
+.\"
+.\" This program is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+.\" GNU General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU General Public License
+.\" along with this program. If not, see <https://www.gnu.org/licenses/>.
+.\"
+.Dd May 11, 2018
+.Dt git-update 1
+.Os
+.Sh NAME
+.Nm git-update
+.Nd recursively update git repos in directory hierarchies
+.Sh SYNOPSIS
+.Nm git-update
+.Op Fl hn
+.Op Ar path ...
+.Sh DESCRIPTION
+The
+.Nm git-update
+script automates
+.Nm git
+fetching and merging across arbitrarily deep directory hierarchies.
+Non-option arguments passed on the command line are treated as pathnames.
+.Nm git-update
+will operate on the current working directory if no pathnames were specified
+at runtime.
+.Pp
+.Nm git-update
+recursively walks the specified directory pathnames, descending into 
+.Nm git
+repos and performing fetch and merge operations.  You can force a
+.Nm git
+repo to be skipped by creating an empty
+.Dq .skip
+file in the repo directory, alongside its .git subdirectory.
+.Pp
+.Nm git-update
+is tolerant of errors and will keep running if at all possible. Note that
+authentication errors usually show up as `error 128'.  In such cases, load
+the appropriate ssh keys into ssh-agent and run
+.Nm git-update
+again.
+.Pp
+The following options are available:
+.Bl -tag -width ident
+.It Fl h
+Display usage information
+.It Fl n
+Disable color output (useful when redirecting to a log file)
+.El
+.Sh EXAMPLES
+Update all the repos in the current directory:
+.Pp
+.Dl "git-update"
+.Pp
+Update all of the repos under ~/src:
+.Pp
+.Dl "git-update ~/src"
+.Sh DIAGNOSTICS
+.Ex -std
+.Sh ENVIRONMENT
+The following environment variables affect the execution of
+.Nm git-update :
+.Bl -tag -width ".Ev LOCAL"
+.It Ev LOCAL
+The directory path from which color specifications will be sourced.
+.Nm git-update
+will run in monochrome if this variable is undefined or if color definitions
+cannot be found within the directory specified by the variable.
+.El
+.Sh AUTHOR
+Ramsey Dow <yesmar@gmail.com>
+.Sh BUGS
+.Nm Bash
+may segfault when recursing massive directory hierarchies, an example being
+out-of-source llvm build directories. In such cases, create an empty
+.Dq .skip
+file within and the offending directory will be skipped.
