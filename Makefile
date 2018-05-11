@@ -8,8 +8,8 @@ include config.mk
 
 .PHONY: install uninstall
 
-install: $(SCRIPT) $(SCRIPT).1
-	install -m 0755 $(SCRIPT) $(BINDIR)
+install: $(SCRIPT).bash $(SCRIPT).1
+	install -m 0755 $(SCRIPT).bash $(BINDIR)/$(SCRIPT)
 	install -m 0644 $(SCRIPT).1 $(MANDIR)
 
 uninstall:
