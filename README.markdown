@@ -1,6 +1,6 @@
 # git-update
 
-&copy; 2018 Ramsey Dow. All rights reserved.
+Copyright © 2018–2019 Ramsey Dow. All rights reserved.
 
 [![](https://img.shields.io/badge/license-GPL%20v3-blue.svg?maxAge=2592000)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 ![Platforms](https://img.shields.io/badge/platform-Linux%20|%20macOS-lightgrey.svg)
@@ -38,11 +38,7 @@ The `git-update` utility exits 0 on success, and >0 if an error occurs.
 
 ## Environment
 
-The following environment variables affect the execution of `git-update`:
-
-| Variable | Description |
-| --- | --- |
-| `LOCAL` | The directory path from which color specifications will be sourced. `git-update` will run in monochrome if this variable is undefined or if color definitions cannot be found within the directory specified by the variable. |
+If you want colorized output, make my [colors.bash](https://gist.github.com/yesmar/17311d0aa7f39d954d31503aab4775f1) script available as `~/.local/etc/colors`.
 
 ## Installation
 

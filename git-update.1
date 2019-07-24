@@ -1,5 +1,5 @@
 .\" git-update recursively update git repos in directory hierarchies.
-.\" Copyright © 2018 Ramsey Dow
+.\" Copyright © 2018–2019 Ramsey Dow
 .\"
 .\" This program is free software: you can redistribute it and/or modify
 .\" it under the terms of the GNU General Public License as published by
@@ -14,7 +14,7 @@
 .\" You should have received a copy of the GNU General Public License
 .\" along with this program. If not, see <https://www.gnu.org/licenses/>.
 .\"
-.Dd May 11, 2018
+.Dd July 24, 2019
 .Dt git-update 1
 .Os
 .Sh NAME
@@ -68,16 +68,6 @@ Update all of the repos under ~/src:
 .Dl "git-update ~/src"
 .Sh DIAGNOSTICS
 .Ex -std
-.Sh ENVIRONMENT
-The following environment variables affect the execution of
-.Nm git-update :
-.Bl -tag -width ".Ev LOCAL"
-.It Ev LOCAL
-The directory path from which color specifications will be sourced.
-.Nm git-update
-will run in monochrome if this variable is undefined or if color definitions
-cannot be found within the directory specified by the variable.
-.El
 .Sh AUTHOR
 Ramsey Dow <yesmar@gmail.com>
 .Sh BUGS
