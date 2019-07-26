@@ -1,6 +1,6 @@
 # git-update
 
-Copyright © 2018–2019 Ramsey Dow. All rights reserved.
+Copyright © 2018 Ramsey Dow. All rights reserved.
 
 [![](https://img.shields.io/badge/license-GPL%20v3-blue.svg?maxAge=2592000)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 ![Platforms](https://img.shields.io/badge/platform-Linux%20|%20macOS-lightgrey.svg)

@@ -3,7 +3,7 @@
 # git-update -- recursively update git repos in directory hierarchies
 # Fri May 11 10:39:42 PDT 2018 yesmar@gmail.com
 
-# Copyright © 2018–2019 Ramsey Dow. All rights reserved.
+# Copyright © 2018 Ramsey Dow. All rights reserved.
 # SPDX-License-Identifier: GPL-3.0
 
 # shellcheck disable=SC2103,SC2154,SC2164
