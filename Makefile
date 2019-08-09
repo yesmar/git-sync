@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-# Makefile for git-update
+# Makefile for git-sync
 # SPDX-License-Identifier: GPL-3.0
 
 SHELL=/bin/bash

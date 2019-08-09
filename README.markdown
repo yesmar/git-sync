@@ -1,15 +1,15 @@
-# git-update
+# git-sync
 
 Copyright © 2018 Ramsey Dow. All rights reserved.
 
 [![](https://img.shields.io/badge/license-GPL%20v3-blue.svg?maxAge=2592000)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 ![Platforms](https://img.shields.io/badge/platform-Linux%20|%20macOS-lightgrey.svg)
 
-The `git-update` script automates `git` fetching and merging across arbitrarily deep directory hierarchies. Non-option arguments passed on the command line are treated as pathnames. `git-update` will operate on the current working directory if no pathnames were specified at runtime.
+The `git-sync` script automates `git` fetching and merging across arbitrarily deep directory hierarchies. Non-option arguments passed on the command line are treated as pathnames. `git-sync` will operate on the current working directory if no pathnames were specified at runtime.
 
-`git-update` recursively walks the specified directory pathnames, descending into `git` repos and performing fetch and merge operations. You can force a `git` repo to be skipped by creating an empty `.skip` file in the repo directory, alongside its `.git` subdirectory.
+`git-sync` recursively walks the specified directory pathnames, descending into `git` repos and performing fetch and merge operations. You can force a `git` repo to be skipped by creating an empty `.skip` file in the repo directory, alongside its `.git` subdirectory.
 
-`git-update` is tolerant of errors and will keep running if at all possible. Note that authentication errors usually show up as `error 128`. In such cases, load the appropriate ssh keys into `ssh-agent` and run `git-update` again.
+`git-sync` is tolerant of errors and will keep running if at all possible. Note that authentication errors usually show up as `error 128`. In such cases, load the appropriate ssh keys into `ssh-agent` and run `git-sync` again.
 
 The following options are available:
 
@@ -23,18 +23,18 @@ The following options are available:
 Update all the repos in the current directory:
 
 ```bash
-git-update
+git-sync
 ```
 
 Update all of the repos under `~/src`:
 
 ```bash
-git-update ~/src
+git-sync ~/src
 ```
 
 ## Diagnostics
 
-The `git-update` utility exits 0 on success, and >0 if an error occurs.
+The `git-sync` utility exits 0 on success, and >0 if an error occurs.
 
 ## Environment
 
@@ -62,4 +62,4 @@ PREFIX=/opt uninstall
 
 ## License
 
-`git-update` is released under the [GNU General Public License, Version 3](https://www.gnu.org/licenses/gpl-3.0.en.html). A copy of the license is included in the distribution.
+`git-sync` is released under the [GNU General Public License, Version 3](https://www.gnu.org/licenses/gpl-3.0.en.html). A copy of the license is included in the distribution.

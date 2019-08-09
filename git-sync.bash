@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# git-update -- recursively update git repos in directory hierarchies
+# git-sync -- recursively update git repos in directory hierarchies
 # Fri May 11 10:39:42 PDT 2018 yesmar@gmail.com
 
 # Copyright © 2018 Ramsey Dow. All rights reserved.
@@ -16,7 +16,7 @@ Usage: $script [-h] [path] …
   -h display this help text
   -n disable color output
 
-git-update Copyright © 2018 Ramsey Dow.
+git-sync Copyright © 2018 Ramsey Dow.
 
 This program comes with ABSOLUTELY NO WARRANTY. This is
 free software, and you are welcome to redistribute it
